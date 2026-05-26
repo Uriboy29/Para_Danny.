@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,22 +20,20 @@
             overflow-x: hidden;
             position: relative;
         }
-
         /* Sparkle Background effect */
+        
         body::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.8) 2%, transparent 3%),
-                radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.8) 2%, transparent 3%),
-                radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.6) 2%, transparent 3%),
-                radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.9) 1%, transparent 2%),
-                radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.9) 1%, transparent 2%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.8) 2%, transparent 3%), radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.8) 2%, transparent 3%), radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.6) 2%, transparent 3%), radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.9) 1%, transparent 2%), radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.9) 1%, transparent 2%);
             z-index: 0;
             pointer-events: none;
         }
-
+        
         #admin-btn {
             position: absolute;
             top: 15px;
@@ -44,11 +43,11 @@
             z-index: 100;
             transition: transform 0.3s;
         }
-
+        
         #admin-btn:hover {
             transform: scale(1.2) rotate(10deg);
         }
-
+        
         .container {
             position: relative;
             z-index: 10;
@@ -62,42 +61,44 @@
             max-height: 90vh;
             overflow-y: auto;
         }
-
         /* Custom Scrollbar for container */
+        
         .container::-webkit-scrollbar {
             width: 8px;
         }
+        
         .container::-webkit-scrollbar-thumb {
             background-color: #ff99b3;
             border-radius: 10px;
         }
-
-        h1, h2 {
+        
+        h1,
+        h2 {
             font-family: 'Fredoka One', cursive;
             color: #ff3385;
             letter-spacing: 1px;
             text-shadow: 2px 2px 4px rgba(255, 192, 203, 0.8);
         }
-
+        
         .osito-img {
             max-width: 250px;
             width: 100%;
             border-radius: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+        
         .cartita-container {
             cursor: pointer;
             margin-top: 20px;
             animation: float 2s ease-in-out infinite;
         }
-
+        
         .cartita {
             font-size: 60px;
             filter: drop-shadow(0 5px 5px rgba(255, 51, 133, 0.4));
         }
-
+        
         .cartita-text {
             font-size: 22px;
             font-weight: bold;
@@ -105,13 +106,19 @@
             margin-top: 10px;
             font-family: 'Fredoka One', cursive;
         }
-
+        
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
-
+        
         .message-box {
             text-align: justify;
             font-size: 17px;
@@ -119,12 +126,12 @@
             color: #d81b60;
             padding: 10px;
         }
-
+        
         .heart-icon {
             color: red;
             font-size: 24px;
         }
-
+        
         .buttons {
             display: flex;
             justify-content: center;
@@ -132,7 +139,7 @@
             margin-top: 30px;
             flex-wrap: wrap;
         }
-
+        
         button {
             font-family: 'Fredoka One', cursive;
             font-size: 18px;
@@ -141,52 +148,58 @@
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
             display: flex;
             align-items: center;
             gap: 8px;
         }
-
+        
         .btn-no {
             background-color: #ffffff;
             color: #d81b60;
             border: 2px solid #ffb3c6;
         }
-
+        
         .btn-no:hover {
             background-color: #ffe6eb;
             transform: scale(1.05);
         }
-
+        
         .btn-si {
             background-color: #ff3385;
             color: white;
             border: 2px solid #ff3385;
         }
-
+        
         .btn-si:hover {
             background-color: #e6005c;
             border-color: #e6005c;
             transform: scale(1.05);
         }
-
+        
         #result-screen {
             display: none;
         }
-
+        
         #result-message {
             font-size: 26px;
             animation: fadeIn 1s ease-in;
             line-height: 1.4;
         }
-
+        
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
     </style>
 </head>
+
 <body>
 
     <div id="admin-btn" title="Carta">💌</div>
@@ -204,10 +217,17 @@
         <!-- Message Screen -->
         <div id="message-screen" style="display:none;">
             <div class="message-box">
-                <p>Entiendo que mis acciones rompieron tu confianza, y me duele saber que te lastimé, Siento mucho lo que pasó. No puedo justificar mi comportamiento y me arrepiento de la forma en que actué porfavor Danny contestameee, te amo mucho muchooo, eres una niña muy bonita, vales mucho y eres muy importante para mi, perdón porque no te he sabido valorar, no te he correspondido ni demostrado que te amo de una manera correcta, porque en serio te amooooo. permíteme platicar y estar a tu lado mas tiempo, y ojalá sea para toda la vida, Danny porfavor no te alejes, no voltees tu mirada me siento vacio si no estas, me haces muy feliz y sufro mucho cuando estamos lejos, te extraño como jamás he extrañado a alguien, perdón por haber herido tu corazón, me duele el saber eso, perdoname porque no he sabido expresar que me muero por ti, perdoname por no ser quien tu pensabas, si deseas abandonarme lo entiendo es mi culpa, yo se que soy una persona mala insensible, con un corazón de piedra, todos me dicen eso, tal vez por eso no encajo en ningún lugar, odio ser así cada noche me inclino hasta el suelo rogándole a Dios por un nuevo corazón que no sea mas insensible ni que se incline a lo malo. gracias porque aunque no lo creas sacas muchas cosas buenas de mí, a tu lado me siento fuerte, confiado, contento y amado, si no me quieras hablar lo comprendo, espero que encuentres una persona que te demuestre que te ame como tu lo deseas y que llene todas tus espectativas, solo ayudame con algo no me hables mas y bloqueme de todos lados y ayudame a olvidarte, aqunque creo que jamás olvidare a una niña tan preciosa como tu, que me traía loco desde ese campamento y que me hizo sentir de lo mejor. En serio te amo y me gustaría que fueras tu y nadie más. Porfavor perdoname.</p>
+                <p>Entiendo que mis acciones rompieron tu confianza y me duele saber que te lastimé, Siento mucho lo que pasó. No puedo justificar mi comportamiento y me arrepiento de la forma en que actué porfavor Danny contestameee, te amo mucho muchooo,
+                    eres una niña muy bonita, vales mucho y eres muy importante para mi, perdón porque no te he sabido valorar, no te he correspondido, ni demostrado que te amo de una manera correcta porque en serio te amooooo. Permíteme platicar y estar
+                    a tu lado mas tiempo y ojalá sea para toda la vida, Danny porfavor no te alejes de mii no me abandones, me siento vacio si no estas, me haces muy feliz y sufro mucho cuando estamos lejos, te extraño como jamás he extrañado a alguien,
+                    perdón por haber herido tu corazón me duele el saber eso, perdoname porque no he sabido expresar que me muero por ti, perdoname por no ser quien tu pensabas, si deseas abandonarme lo entiendo es mi culpa, yo se que soy una persona
+                    mala, insensible, con un corazón de piedra, todos me dicen eso tal vez por eso no encajo en ningún lugar, odio ser así. Cada noche me inclino hasta el suelo rogándole a Dios por un nuevo corazón que no sea mas sensible y que no se incline
+                    a lo malo. gracias porque aunque no lo creas sacas muchas cosas buenas de mí, a tu lado me siento fuerte, confiado, contento y amado, si no me quieres hablar lo comprendo, espero que encuentres una persona que te demuestre que te ama
+                    como tu lo deseas y que llene todas tus expectativas, solo ayudame con algo, no me hables mas y bloqueme de todos lados y ayudame a olvidarte, aqunque creo que jamás olvidare a una niña tan preciosa como tu, que me traía loco desde
+                    ese campamento y que me hizo sentir de lo mejor. En serio te amo y me gustaría que fueras tu y nadie más. Porfavor perdoname.</p>
                 <p style="text-align: center; margin-top: 20px;">Te escribo esto porque no se hacer cartitas tan bonitas como tu.<br>
-                <strong>Te amo mil ocho mil chaparrita</strong> <span class="heart-icon">❤️</span></p>
-                
+                    <strong>Te amo mil ocho mil chaparrita</strong> <span class="heart-icon">❤️</span></p>
+
                 <h2 style="text-align: center; margin-top: 30px; font-size: 26px;">¿Me perdonas??</h2>
                 <div class="buttons">
                     <button class="btn-no" onclick="answer('no')">No 💔</button>
@@ -233,12 +253,12 @@
         function answer(res) {
             // Guardar la respuesta localmente
             localStorage.setItem(RESPONSE_KEY, res);
-            
+
             document.getElementById('message-screen').style.display = 'none';
             document.getElementById('result-screen').style.display = 'block';
-            
+
             let msgEl = document.getElementById('result-message');
-            
+
             if (res === 'no') {
                 msgEl.innerText = "Gracias por todo Danny, perdón y te amooo";
                 msgEl.style.color = "#d81b60";
@@ -280,4 +300,5 @@
         });
     </script>
 </body>
+
 </html>
